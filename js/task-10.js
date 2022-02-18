@@ -12,7 +12,7 @@ destroyButtonEl.addEventListener("click", destroyBoxes);
 
 function createBoxes() {
   const divElements = [];
-  let countPX = 30;
+  let countPX = 30 + 10 * boxesEl.querySelectorAll(".item").length;
   for (let i = 0; i < inputEl.value; i++) {
     const addDiv = document.createElement("div");
     addDiv.classList.add("item");
@@ -23,6 +23,7 @@ function createBoxes() {
     countPX += 10;
   }
   boxesEl.append(...divElements);
+  inputEl.value = "";
 }
 
 function destroyBoxes() {

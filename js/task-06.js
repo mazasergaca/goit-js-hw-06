@@ -1,10 +1,10 @@
 const inputEl = document.querySelector("#validation-input");
-const lengthValue = inputEl.dataset.length;
+const lengthValue = Number(inputEl.dataset.length);
 
 inputEl.addEventListener("blur", onCheckLength);
 
 function onCheckLength(event) {
-  if (event.currentTarget.value.length === +lengthValue) {
+  if (event.currentTarget.value.length === lengthValue) {
     inputEl.classList.add("valid");
     inputEl.classList.remove("invalid");
   } else {
